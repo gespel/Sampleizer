@@ -1,3 +1,4 @@
+import randosine
 import sine
 
 class Sampleizer:
@@ -7,15 +8,24 @@ class Sampleizer:
 
     def add_sample(self, sample):
         self.out_string += f"{sample}, "
+        self.samples.append(sample)
 
     def get_definition(self):
         out = self.out_string[:-2]
         out += "};"
         return out
 
-s = Sampleizer("sine")
+    def visualize(self):
+        import matplotlib.pyplot as plt
+        plt.plot(self.samples)
+        plt.show()
+
+s = Sampleizer("randosineOne")
 si = sine.Sine(10.0, 48000.0)
+rs = randosine.RandoSine(10, 48000.0, 16)
 for i in range(4800):
-    s.add_sample(si.get_sample())
+    s.add_sample(rs.get_sample())
+
+s.visualize()
 print(s.get_definition())
         
