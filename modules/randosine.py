@@ -1,13 +1,15 @@
 import random
+from modules.sine import Sine
+from modules.square import Square
 
-import sine
 
 class RandoSine:
     def __init__(self, freq, sample_rate, num_oscillators):
         self.freq = freq
         self.sample_rate = sample_rate
-        self.oscs = [sine.Sine(freq//2 * random.randint(1, 8), sample_rate) for i in range(0, num_oscillators)]
-
+        self.oscs = [Sine(freq // 2 * random.randint(1, 8), sample_rate) for i in range(0, num_oscillators)]
+        for x in range(0, 1):
+            self.oscs.append(Square(freq // 2 * random.randint(1, 8), sample_rate))
     def get_sample(self):
         out = 0.0
         for osc in self.oscs:
