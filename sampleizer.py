@@ -1,5 +1,5 @@
-from modules import sine, randosine
-
+import randosine
+import sine
 
 class Sampleizer:
     def __init__(self, name):
@@ -22,7 +22,7 @@ class Sampleizer:
 
 s = Sampleizer("randosineOne")
 si = sine.Sine(10.0, 48000.0)
-rs = randosine.RandoSine(10, 48000.0, 1)
+rs = randosine.RandoSine(10, 48000.0, 16)
 for i in range(4800):
     s.add_sample(rs.get_sample())
 
