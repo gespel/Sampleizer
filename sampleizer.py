@@ -16,17 +16,15 @@ class Sampleizer:
         out += "};"
         return out
 
-    def visualize(self):
-        import matplotlib.pyplot as plt
-        plt.plot(self.samples)
-        plt.show()
+    def get_samples(self):
+        return self.samples
 
-s = Sampleizer("randosineOne")
-si = sine.Sine(10.0, 48000.0)
-rs = randosine.RandoSine(10, 48000.0, 1)
-for i in range(4800):
-    s.add_sample(rs.get_sample())
+#s = Sampleizer("randosineOne")
+#si = sine.Sine(10.0, 48000.0)
+#rs = randosine.RandoSine(10, 48000.0, 1)
+#for i in range(4800):
+#    s.add_sample(rs.get_sample())
 
-s.visualize()
-print(s.get_definition())
+#s.visualize()
+#print(s.get_definition())
         
