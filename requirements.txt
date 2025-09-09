@@ -1,0 +1,4 @@
+flask>=3.1.2
+matplotlib>=3.8.0
+numpy>=1.26.4
+randomname>=0.2.1
